@@ -41,15 +41,7 @@ const ProductDetail = ({ product }) => {
             quantity: quantity,
         });
 
-        alert(
-            `Thêm thành công sản phẩm vào giỏ hàng. id: ${
-                productCart.id
-            }, Tên sp: ${productCart.name}, ${
-                productCart.size ? `Kích thước: ${productCart.size}` : ""
-            }, ${
-                productCart.color ? `Màu sắc: ${productCart.color}` : ""
-            }, Số lượng: ${productCart.quantity}`,
-        );
+        alert("Thêm thành công sản phẩm vào giỏ hàng");
     };
 
     return (
