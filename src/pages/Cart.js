@@ -1,7 +1,8 @@
 import React from "react";
+import CartItem from "../components/cart/CartItem";
 
 const Cart = () => {
-    return <div style={{ marginTop: "60px" }}>Cart</div>;
+    return <CartItem />;
 };
 
 export default Cart;

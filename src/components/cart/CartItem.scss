@@ -1,0 +1,13 @@
+@use "../../scss/" as *;
+
+.cart-item {
+    @include m-width;
+    margin-top: $header-height;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: 50vh;
+
+    &__title {
+        margin-bottom: 20px;
+    }
+}
