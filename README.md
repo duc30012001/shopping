@@ -1,6 +1,7 @@
 https://shopping-phi-eight.vercel.app/
 
 api: https://clothes.free.beeceptor.com/{path}
+
 path: {
     products,
     tops: [shirts, tshirts, polos],
