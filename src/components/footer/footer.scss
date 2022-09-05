@@ -1,0 +1,29 @@
+@use "../../scss/" as *;
+
+.footer {
+    border-top: $border;
+    padding: 50px 0px 30px;
+
+    &__lists {
+        display: grid;
+        grid-template-columns: 1fr;
+        @include m-width;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include pc {
+            @include flex(flex-start, space-between);
+        }
+    }
+
+    &__list {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+}

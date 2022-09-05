@@ -1,0 +1,29 @@
+@use "./breakpoint" as *;
+@use "./variables" as *;
+
+@mixin flex($aligin-item, $justify-content) {
+    display: flex;
+    align-items: $aligin-item;
+    justify-content: $justify-content;
+}
+
+@mixin grid($col, $gap) {
+    display: grid;
+    grid-template-columns: repeat($col, 1fr);
+    gap: $gap;
+}
+
+@mixin m-width {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include tablet {
+        max-width: $max-width-md;
+    }
+
+    @include pc {
+        max-width: $max-width-lg;
+    }
+}

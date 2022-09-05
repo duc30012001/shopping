@@ -1,0 +1,43 @@
+@use "./scss/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: $body-bg;
+    color: $txt-color;
+}
+
+.container {
+    width: 100%;
+    // max-width: $max-width;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    color: $main-color;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}

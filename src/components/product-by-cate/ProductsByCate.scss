@@ -1,0 +1,7 @@
+@use "../../scss/" as *;
+
+.pro-by-cate {
+    &__container {
+        margin-top: $header-height;
+    }
+}

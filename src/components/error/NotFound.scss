@@ -1,0 +1,7 @@
+@use "../../scss/" as *;
+
+.not-found {
+    @include m-width;
+    text-align: center;
+    padding: 100px 0px;
+}

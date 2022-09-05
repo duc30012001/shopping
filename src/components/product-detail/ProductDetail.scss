@@ -1,0 +1,103 @@
+@use "../../scss/" as *;
+
+.product-detail {
+    @include m-width;
+    margin-top: $header-height;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__images {
+        margin-bottom: 25px;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__color,
+    &__size {
+        margin-top: 20px;
+        &__list {
+            display: flex;
+            gap: 15px;
+        }
+
+        &__item {
+            $width: 45px;
+            border: $border;
+            width: $width;
+            height: $width;
+            text-align: center;
+            line-height: $width;
+            cursor: pointer;
+        }
+    }
+
+    &__quantity {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        &__btn {
+            $btn-w: 40px;
+            border: $border;
+            width: $btn-w;
+            height: $btn-w;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: $body-bg;
+        }
+
+        &__input {
+            $btn-w: 40px;
+            height: $btn-w;
+            width: 50px;
+            border: $border;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+
+    &__buy {
+        // height: 40px;
+        font-size: 16px;
+        padding: 15px;
+        cursor: pointer;
+        background-color: $main-color;
+        color: $body-bg;
+        border: none;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
+
+    @include pc {
+        @include flex(flex-start, space-between);
+        gap: 30px;
+
+        &__images {
+            width: calc(50% - 15px);
+            // padding: 15px;
+        }
+        &__infor {
+            width: calc(50% - 15px);
+            // padding: 15px;
+        }
+    }
+}
+
+.active {
+    background-color: $main-color;
+    color: $body-bg;
+}

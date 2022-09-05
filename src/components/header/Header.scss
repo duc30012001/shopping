@@ -1,0 +1,169 @@
+@use "../../scss/" as *;
+
+.header {
+    box-shadow: $box-shadow;
+    min-height: $header-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: $body-bg;
+
+    &__container {
+        @include m-width;
+    }
+
+    &__toolbar {
+        width: 100%;
+        font-size: 24px;
+        @include flex(center, space-between);
+        line-height: $header-height;
+
+        &--bar {
+            display: block;
+            width: 50px;
+        }
+
+        &--cart {
+            width: 50px;
+            text-align: right;
+        }
+    }
+
+    &__nav {
+        display: none;
+        order: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: unset;
+
+        &__item {
+            width: 100%;
+            border-top: $border;
+            position: relative;
+            font-weight: 500;
+
+            &__link {
+                width: calc(100% - 50px);
+                display: inline-block;
+                line-height: 45px;
+                text-transform: uppercase;
+            }
+
+            &__btn {
+                display: inline-block;
+                width: 50px;
+                position: absolute;
+                right: 0;
+                text-align: right;
+                font-size: 20px;
+                line-height: 45px;
+                transform: translateY(5px);
+                padding-left: 5px;
+            }
+
+            &-menu {
+                width: 100%;
+                display: none;
+                font-weight: 400;
+
+                &__item {
+                    padding-left: 15px;
+
+                    &--link {
+                        display: block;
+                        width: 100%;
+                        line-height: 40px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    @include pc {
+        &__container {
+            @include flex(center, space-between);
+        }
+
+        &__toolbar {
+            order: 2;
+            width: initial;
+        }
+
+        &__toolbar--bar {
+            display: none;
+        }
+
+        &__nav {
+            @include flex(center, space-between);
+            flex-direction: row;
+            width: unset;
+            gap: 30px;
+
+            &__item {
+                width: initial;
+                border-top: initial;
+                line-height: $header-height;
+
+                &__link {
+                    display: initial;
+                    position: relative;
+                }
+
+                &__link::before {
+                    content: "";
+                    width: calc(100% + 20px);
+                    height: 20px;
+                    background-color: aqua;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                }
+
+                &__btn {
+                    // width: initial;
+                    // // display: unset;
+                    // position: initial;
+                    // line-height: $header-height;
+                    // pointer-events: none;
+                    display: none;
+                }
+
+                &-menu {
+                    position: absolute;
+                    top: 100%;
+                    background-color: $body-bg;
+                    width: 150px;
+                    box-shadow: $box-shadow;
+
+                    &__item {
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $main-color;
+                            color: $white;
+                        }
+
+                        &:hover a {
+                            color: $white;
+                        }
+                    }
+                }
+
+                &:hover &-menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.show {
+    display: flex;
+}
+
+.show-menu {
+    display: block;
+}
