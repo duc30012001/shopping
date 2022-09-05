@@ -15,6 +15,8 @@ import { Autoplay, Navigation } from "swiper";
 
 import { setProduct } from "../redux/actions/product";
 
+import { productsByCate, covers } from "../fakeData";
+
 const Home = () => {
     window.scrollTo({ top: 0 });
 
@@ -40,8 +42,11 @@ const Home = () => {
     };
 
     useEffect(() => {
-        getCover("cover");
-        getArrival("tops");
+        // getCover("cover");
+        // getArrival("tops");
+
+        setCover(covers);
+        dispatch(setProduct(productsByCate["tops"]));
     }, []);
 
     return (

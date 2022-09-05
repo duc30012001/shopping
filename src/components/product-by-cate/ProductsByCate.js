@@ -5,6 +5,8 @@ import "./ProductsByCate.scss";
 import ProductsList from "../product-list/ProductsList";
 import { setProduct } from "../../redux/actions/product";
 
+import { productsByCate } from "../../fakeData";
+
 const ProductsByCate = ({ cate, categories }) => {
     window.scrollTo({ top: 0 });
 
@@ -19,7 +21,8 @@ const ProductsByCate = ({ cate, categories }) => {
     };
 
     useEffect(() => {
-        getProducts(cate);
+        // getProducts(cate);
+        dispatch(setProduct(productsByCate[cate]));
     }, [cate]);
 
     return (
