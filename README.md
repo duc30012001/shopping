@@ -9,6 +9,7 @@ path: {
     outfits,
     accessories: [belts, bags, shoes]
 }
+
 github_repo: https://github.com/duc30012001/shopping
 
 api giới hạn 50 request/ngày nên sẽ có thể không lấy được dữ liệu
