@@ -1,23 +1,15 @@
 @use "../../scss/" as *;
 
 .product {
-    &__container {
-        @include m-width;
-        margin-top: $header-height;
-        padding-top: 30px;
-        margin-bottom: 30px;
-    }
+    @include m-width;
+    margin-top: $header-height;
+    padding-top: 30px;
+    margin-bottom: 30px;
 
     &__header {
-        // text-align: center;
         margin-bottom: 30px;
         font-size: 32px;
         text-transform: uppercase;
-    }
-
-    &__img {
-        // max-height: 350px;
-        // overflow: hidden;
     }
 
     &__list {

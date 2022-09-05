@@ -1,5 +1,5 @@
 const apiConfig = {
-    baseUrl: "https://clothes.free.beeceptor.com/",
+    baseURL: "https://clothes.free.beeceptor.com/",
 };
 
 export default apiConfig;

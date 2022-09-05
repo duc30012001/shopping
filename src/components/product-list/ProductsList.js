@@ -7,7 +7,7 @@ import numberWithCommas from "../../utils/numberWithCommas";
 const ProductsList = ({ products = [], header }) => {
     // console.log(products);
     return (
-        <div className="product__container">
+        <div className="product">
             <h2 className="product__header">{header}</h2>
             <ul className="product__list">
                 {products.map((product, index) => {
