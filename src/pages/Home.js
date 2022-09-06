@@ -13,13 +13,16 @@ import "swiper/css/autoplay";
 // import required modules
 import { Autoplay, Navigation } from "swiper";
 
-import { setProduct } from "../redux/actions/product";
+import { setProducts } from "../redux/productsSlice";
+
+// use fake data when api is limited
+import { productsByCate, covers } from "../fakeData";
 
 const Home = () => {
     window.scrollTo({ top: 0 });
 
     const products = useSelector((state) => {
-        return state.product;
+        return state.products.value;
     });
     const dispatch = useDispatch();
 
@@ -36,12 +39,16 @@ const Home = () => {
         const response = await axiosClient.get(param).catch((err) => {
             console.log("Err: ", err);
         });
-        dispatch(setProduct(response.data));
+        dispatch(setProducts(response.data));
     };
 
     useEffect(() => {
         getCover("cover");
         getArrival("tops");
+
+        // use when api is limited
+        // setCover(covers);
+        // dispatch(setProducts(productsByCate["tops"]));
     }, []);
 
     return (

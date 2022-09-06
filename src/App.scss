@@ -41,3 +41,21 @@ li {
 img {
     width: 100%;
 }
+
+button {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    background-color: $main-color;
+    color: $body-bg;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: $font-family;
+
+    &:hover {
+        filter: brightness(1.2);
+        cursor: pointer;
+    }
+}

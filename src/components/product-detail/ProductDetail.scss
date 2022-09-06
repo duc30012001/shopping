@@ -44,6 +44,13 @@
         }
     }
 
+    &__color__item {
+        $padding: 15px;
+        width: initial;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
     &__quantity {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -56,6 +63,12 @@
             font-size: 24px;
             cursor: pointer;
             background-color: $body-bg;
+            color: $txt-color;
+            padding: 0;
+
+            &:hover {
+                filter: unset;
+            }
         }
 
         &__input {
@@ -68,21 +81,7 @@
         }
     }
 
-    &__buy {
-        // height: 40px;
-        font-size: 16px;
-        padding: 15px;
-        cursor: pointer;
-        background-color: $main-color;
-        color: $body-bg;
-        border: none;
-
-        &:hover {
-            filter: brightness(1.2);
-        }
-    }
-
-    @include pc {
+    @include tablet {
         @include flex(flex-start, space-between);
         gap: 30px;
 

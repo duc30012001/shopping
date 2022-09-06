@@ -12,15 +12,19 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 import numberWithCommas from "../../utils/numberWithCommas";
+import { useDispatch } from "react-redux";
+import { addCartItems } from "../../redux/cartItemsSlice";
 
 const ProductDetail = ({ product }) => {
     window.scrollTo({ top: 0 });
+
+    const dispatch = useDispatch();
+
     const [img, setImg] = useState(product?.images[0]);
 
     const [selectColor, setSelectColor] = useState(undefined);
     const [selectSize, setSelectSize] = useState(undefined);
     const [quantity, setQuantity] = useState(1);
-    const [productCart, setProductCart] = useState({});
 
     const handleAddToCart = () => {
         if (selectColor === undefined && product.color) {
@@ -33,15 +37,19 @@ const ProductDetail = ({ product }) => {
             return;
         }
 
-        setProductCart({
+        const productCart = {
             id: product.id,
+            image: img,
             name: product.name,
             color: selectColor,
             size: selectSize,
             quantity: quantity,
-        });
+            price: product.price,
+        };
 
-        alert("Thêm thành công sản phẩm vào giỏ hàng");
+        dispatch(addCartItems(productCart));
+
+        alert("Cart added successfully");
     };
 
     return (
@@ -129,7 +137,7 @@ const ProductDetail = ({ product }) => {
                     <button
                         className="product-detail__quantity__btn product-detail__quantity__btn--descrease"
                         onClick={() =>
-                            setQuantity((prev) => (prev === 0 ? 0 : prev - 1))
+                            setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
                         }
                     >
                         -

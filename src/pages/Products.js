@@ -8,7 +8,7 @@ import NotFound from "../components/error/NotFound";
 const Products = ({ categories }) => {
     const cateKeys = Object.keys(categories);
     const { param } = useParams();
-    const products = useSelector((state) => state.product);
+    const products = useSelector((state) => state.products.value);
 
     const filter = products.filter((product) => product.id === param);
 

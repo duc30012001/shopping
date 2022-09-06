@@ -5,10 +5,15 @@ import "./Header.scss";
 import { BsBagCheck } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
 import { VscThreeBars } from "react-icons/vsc";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [showNav, setShowNav] = useState(false);
     const [showMenu, setShowMenu] = useState("");
+
+    const cartItemsLength = useSelector(
+        (state) => state.cartItems.value.length,
+    );
 
     const handleBar = () => {
         setShowNav(!showNav);
@@ -22,11 +27,14 @@ const Header = () => {
         <header className="header">
             <div className="header__container">
                 <div className="header__toolbar">
-                    <div className="header__toolbar--bar" onClick={handleBar}>
+                    <div className="header__toolbar__bar" onClick={handleBar}>
                         <VscThreeBars />
                     </div>
-                    <Link to="/cart" className="header__toolbar--cart">
+                    <Link to="/cart" className="header__toolbar__cart">
                         <BsBagCheck />
+                        <p className="header__toolbar__cart--quantity">
+                            {cartItemsLength}
+                        </p>
                     </Link>
                 </div>
                 <nav className={showNav ? "header__nav show" : "header__nav"}>
