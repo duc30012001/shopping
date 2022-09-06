@@ -3,26 +3,26 @@ import axiosClient from "../../api/axiosClient";
 import { useSelector, useDispatch } from "react-redux";
 import "./ProductsByCate.scss";
 import ProductsList from "../product-list/ProductsList";
-import { setProduct } from "../../redux/actions/product";
+import { setProducts } from "../../redux/productsSlice";
 
 import { productsByCate } from "../../fakeData";
 
 const ProductsByCate = ({ cate, categories }) => {
     window.scrollTo({ top: 0 });
 
-    const products = useSelector((state) => state.product);
+    const products = useSelector((state) => state.products.value);
     const dispatch = useDispatch();
 
     const getProducts = async (cate) => {
         const response = await axiosClient.get(cate).catch((err) => {
             console.log("Err: ", err);
         });
-        dispatch(setProduct(response.data));
+        dispatch(setProducts(response.data));
     };
 
     useEffect(() => {
         // getProducts(cate);
-        dispatch(setProduct(productsByCate[cate]));
+        dispatch(setProducts(productsByCate[cate]));
     }, [cate]);
 
     return (

@@ -10,4 +10,77 @@
     &__title {
         margin-bottom: 20px;
     }
+
+    &__list {
+    }
+
+    &__product {
+        $size: 80px;
+        $padding: 10px;
+        @include flex(center, space-between);
+        border-top: $border;
+        padding-top: $padding;
+        padding-bottom: $padding;
+
+        &__img {
+            width: $size;
+            height: $size;
+            margin-right: $padding * 2;
+
+            img {
+                width: initial;
+                height: 100%;
+            }
+        }
+
+        &__details {
+            flex-grow: 1;
+        }
+
+        &__remove {
+            line-height: $size;
+            padding-left: $padding;
+            padding-right: $padding;
+            cursor: pointer;
+            margin-left: $padding;
+        }
+
+        &:last-child {
+            border-bottom: $border;
+        }
+    }
+
+    &__function {
+        $size: 30px;
+        @include flex(center, center);
+
+        &__increase,
+        &__decrease {
+            padding: 0;
+            width: $size;
+            height: $size;
+            line-height: $size;
+        }
+
+        &__quantity {
+            padding-left: 10px;
+            line-height: $size;
+            width: $size * 1.5;
+        }
+    }
+
+    &__checkout {
+        @include flex(flex-end, center);
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    &__buy {
+        max-width: unset;
+
+        @include pc {
+            max-width: 400px;
+        }
+    }
 }
